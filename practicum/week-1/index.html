@@ -1,56 +1,86 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!--DO NOT CHANGE THE FOLLOWING LINES !!!-->
-    <link rel="stylesheet" href="styles.css">
-    <script src="https://habahram.github.io/ISTA330/practicum/week-1/tests.js" type="text/javascript"></script>
-   
-    <title>Document</title>
+  <title>Bootstrap 4 Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div>
-        <p>
-            In this practicum you will develop a responsive webpage using Bootstrap. The webpage that you need to 
-            develop is a simple verstion of the first page of this website: <a href="https://giftsear.ch">https://giftsear.ch</a>
-        
-        </p>
-        <p>
-            What you need to do:
-            <ol>
-                <li>Create a github repository and name it <i>mygiftsearch</i>. Inside that repository
-                 create an html file and name it <i>index.html</i>. That file will contain your code for 
-                 this practicum. </li>
-                <li>Your <i>mygiftsearch</i> web page should have the following Boostrap components:
-                    <ol>
-                        <li>Bootstrap container</li>
-                        <li>Bootstrap Image</li>
-                        <li>Bootstrap Button</li>
-                        <li>Bootstrap Card</li>
-                        <li>Bootstrap Navigation Bar</li>
-                    </ol>
-                </li>
-                <li>You just need to develop one single page. The links in the navigation bar 
-                     can be all broken links. 
-                </li>
-                <li>Your design should be responsive, meaning it should look good on all devices.</li>
-                <li>When you are done with your design, you need to publish your <i>mygiftsearch</i> repository. To 
-                do that do the followings: <ul>
-                    <li>Go to your <i>mygiftsearch</i> repository</li>
-                    <li>Select the <i>Settings</i> tab</li>
-                    <li>Navigate to <i>Github Pages</i> section</li>
-                    <li>In the <i>source</i> select the master branch and then click the <i>Save</i> button</li>
-                </ul></li>
-                <li>Once you publish your webpage, it will be shown in the iframe below.</li>
-            </ol>
-        </p>
-    </div>
-    
 
-    <div class="iframe-container">
-        <iframe id="myApplicationFrame" src="" allowfullscreen></iframe>
+    <nav class="navbar navbar-expand-sm bg-primary navbar-dark justify-content-center">
+        <ul class="navbar-nav">
+          <li class="nav-item active">
+            <a class="nav-link" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Suprise Me!</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Contact us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Check Out</a>
+          </li>
+        </ul>
+      </nav>
+
+<div class="container">
+  <h1>My First Bootstrap Page</h1>
+  <p>This is some text.</p>
+</div>
+
+<div class="row">
+    <div class="col-sm-3">
+        <div class="card" style="width:300px">
+            <img class="card-img-top" src="img/basketball.png" alt="Card image">
+            <div class="card-body">
+              <h4 class="card-title">Game Used Baskebtall</h4>
+              <p class="card-text">Game used NBA basketball.</p>
+              <a href="#" class="btn btn-primary">$200</a>
+            </div>
+          </div>
     </div>
-    
+    <div class="col-sm-3">
+        <div class="card" style="width:300px">
+            <img class="card-img-top" src="img/bicycle-1834265_640.jpg" alt="Card image">
+            <div class="card-body">
+              <h4 class="card-title">Bicycle</h4>
+              <p class="card-text">Standard Mountain bicycle.</p>
+              <a href="#" class="btn btn-primary">$600</a>
+            </div>
+          </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card" style="width:300px">
+            <img class="card-img-top" src="img/smart-watch-889639_640.jpg" alt="Card image">
+            <div class="card-body">
+              <h4 class="card-title">Apple Smart Watch</h4>
+              <p class="card-text">Smart was 5.0.</p>
+              <a href="#" class="btn btn-primary">$300</a>
+            </div>
+          </div>
+    </div>
+    <div class="col-sm-3">
+        <div class="card" style="width:300px">
+            <img class="card-img-top" src="img/break-1736072_640.jpg" alt="Card image">
+            <div class="card-body">
+              <h4 class="card-title">Pillow</h4>
+              <p class="card-text">Flavor text DO NOT DISTRUB pillow.</p>
+              <a href="#" class="btn btn-primary">$25</a>
+            </div>
+          </div>
+    </div>
+  </div>
+
+
 </body>
+<footer>
+    <div class="container-fluid">
+        <p>Thank you for choosing gift search!  We hope to see you often!</p>
+    </div>
+</footer>
 </html>
