@@ -10,6 +10,25 @@ Example: input: cookies = [3, 5, 8] , extraCookies = 8
  */
 
  var canGetEqualCookies = function(cookies, extraCookies) {
-     
+     const tempArray = cookies;
+     let maxNum = 0;
+     let extra = extraCookies;
+     for(let i = 0; i < cookies.length; i++) {
+             if (cookies[i] > maxNum) {
+                     maxNum = cookies[i];
+             }
+     }
+     for(let i = 0; i < tempArray.length; i++) {
+             while(tempArray[i] < maxNum && extra > 0) {
+                tempArray[i]++;
+                extra--;
+             }
+     }
+     for(let i = 0; i < tempArray.length;i++){
+             if(tempArray[i] < maxNum) {
+                return false;
+             }
+     }
+     return true;
     
  };
