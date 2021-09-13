@@ -13,5 +13,19 @@ output: 3
 */
 
 var d_integer = function(input) {
-
+    let valToReturn = -1;
+    for(let i = 0; i < input.length; i++) {
+        let count = 1;
+        for(let j = 0; j < input.length; j++) {
+            if(input[i] == input[j] && i != j){
+                count++;
+            }
+        }
+        if(count == input[i]) {
+            if(input[i] > valToReturn){
+                valToReturn = input[i];
+            }
+        }
+    }
+    return valToReturn;
 };
