@@ -9,5 +9,12 @@ Given n, calculate F(n).
 */
 
 var F = function(n) {
+    if(n == 1){
+        return 1;
+    }
+    if(n == 0){
+        return 0;
+    }
 
+    return F(n - 1) + F(n - 2);
 };
