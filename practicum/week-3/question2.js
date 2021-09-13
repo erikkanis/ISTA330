@@ -10,6 +10,18 @@ Example: input: [-12,3,-1,5,-2,1,-7]
           */
 
  var largestSubarray = function(input) {
-     
+     let currentMax = Number.MIN_VALUE;
+     let currentSubTotal = 0;
+
+     for(let i = 0; i < input.length; i++) {
+             currentSubTotal += input[i];
+             if(currentMax < currentSubTotal) {
+                     currentMax = currentSubTotal;
+             }
+             if(currentSubTotal < 0) {
+                     currentSubTotal = 0;
+             }
+     }
+     return currentMax;
     
  };
