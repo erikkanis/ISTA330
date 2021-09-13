@@ -13,5 +13,17 @@ output: [
 */
 
 var PascalTriangle = function(n) {
-
+  let arrayToReturn = [];
+  for(let r = 1; r <= n; r++) {
+    let tempArray = [];
+    for(let c = 0; c < r; c++) {
+      if( c == 0 || c == r - 1) {
+        tempArray.push(1);
+      } else {
+        tempArray.push(arrayToReturn[r-2][c-1] + arrayToReturn[r-2][c]);
+      }
+    }
+    arrayToReturn.push(tempArray);
+  }
+  return arrayToReturn;
 };
