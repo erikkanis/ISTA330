@@ -14,5 +14,15 @@ output: 1
 */
 
 var d_count = function(input1, input2, d) {
-
+    let count = 0;
+    for(let i = 0; i < input1.length; i++ ) {
+        let anyElement = false;
+        for(let j = 0; j < input2.length; j++) {
+            if(input1[i] - input2[j] <= d) {
+                anyElement = true;
+            }
+        }
+        if(!anyElement) count++;
+    }
+    return count;
 };

@@ -16,5 +16,18 @@ output: [[-5, -4], [23, 24]]
 */
 
 var minPairs = function(input) {
+    const toReturn = [];
+    let minDifference = Number.MAX_SAFE_INTEGER;
+    input.sort((a,b) => a - b);
 
+    for(let i = 1; i < input.length; i++) {
+        minDifference = Math.min(input[i] - input[i - 1], minDifference); 
+    }
+
+    for(let i = 1; i < input.length; i++) {
+        if(input[i] - input[i - 1] == minDifference) {
+            toReturn.push([input[i - 1], input[i]]);
+        }
+    }
+    return toReturn;
 };

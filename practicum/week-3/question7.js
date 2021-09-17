@@ -13,9 +13,6 @@ output: [[1,4], [2,5], [3,6]]
 
 var transpose = function(M) {
     const tArray = [];
-    for(var i = 0; i < M.length; i++){
-        tArray.push([]);
-    };
     for(let i = 0; i < M.length; i++ ) {
         for(let j = 0; j < M[i].length; j++) {
             if(tArray[j] == undefined) tArray[j] = [];;
