@@ -34,8 +34,7 @@ function allPartitions(input){
   for(let i = 0; i < n; i++) {
     result[i][result[i].length-1] += input[input.length-1];
   }
-  return result.concat(newPartitions);
-  
+  return result.concat(newPartitions);  
 }
 // Here is how you can use the utility function allPartitions:
 for (let partition of allPartitions("aba")) {
