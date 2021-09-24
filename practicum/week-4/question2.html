@@ -55,7 +55,7 @@
 
     </div>
     <div id='flowersDiv'>
-
+        <table></table>
     </div>
     <script>
         /*
@@ -75,6 +75,27 @@
         waterlily   cherryblossom  daffodil    daisy 
         
         */
+
+        let showFlower = (flowers) => {
+           let flowersDiv = document.getElementById('flowersDiv');
+           let table = flowersDiv.firstElementChild;
+           let row1 = table.insertRow();
+           let row2 = table.insertRow();
+           for (i = 0; i < flowers.length; i++) {
+               let figure = `<td><figure>
+                                <image src='${flowers[i].picture}' 
+                                    alt="${flowers[i].name}">
+                                <figcaption>${flowers[i].name}</figcaption>
+                            </figure></td>`;
+
+                    if(i < 4) {
+                        row1.innerHTML += figure;
+                    } else {
+                        row2.innerHTML += figure;
+                    }
+           }
+       };
+
         class Flower {
             constructor(name, pictureName) {
                 this.name = name;
