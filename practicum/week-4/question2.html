@@ -78,11 +78,14 @@
 
         let showFlower = (flowers) => {
            let flowersDiv = document.getElementById('flowersDiv');
+           flowersDiv.addEventListener("click", () => {
+	            alert('hello');
+                });
            let table = flowersDiv.firstElementChild;
            let row1 = table.insertRow();
            let row2 = table.insertRow();
            for (i = 0; i < flowers.length; i++) {
-               let figure = `<td><figure>
+               let figure = `<td><figure onclick="clickFigure(i, flowers)">
                                 <image src='${flowers[i].picture}' 
                                     alt="${flowers[i].name}">
                                 <figcaption>${flowers[i].name}</figcaption>
@@ -95,6 +98,18 @@
                     }
            }
        };
+
+       let clickFigure = (i, flowers) => {
+           let temp = [];
+           let count = 0;
+           for(let j = i; j < flowers.length; j++) {
+               temp[count++] = flowers[j];
+           }
+           for(j = 0; j < i; j++) {
+              temp[j] = flowers[j];
+           }
+           showFlower(temp);
+       }
 
         class Flower {
             constructor(name, pictureName) {
@@ -121,6 +136,10 @@
             rose,
             waterlily
         ];
+        flowers.sort(function(a, b) {
+            return a.name.localeCompare(b.name);
+        });
+       showFlower(flowers);
     </script>
 </body>
 

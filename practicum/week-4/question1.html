@@ -74,6 +74,10 @@
              rose,
              waterlily
        ];
+       flowers.sort(function(a, b) {
+            return a.name.localeCompare(b.name);
+       });
+       showFlower(flowers);
     </script>
 </body>
 </html>
