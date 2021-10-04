@@ -78,14 +78,14 @@
 
         let showFlower = (flowers) => {
            let flowersDiv = document.getElementById('flowersDiv');
-           flowersDiv.addEventListener("click", () => {
-	            alert('hello');
-                });
+           ////flowersDiv.addEventListener("click", () => {
+               // });
            let table = flowersDiv.firstElementChild;
+                table.innerHTML = "";
            let row1 = table.insertRow();
            let row2 = table.insertRow();
            for (i = 0; i < flowers.length; i++) {
-               let figure = `<td><figure onclick="clickFigure(i, flowers)">
+               let figure = `<td><figure onclick="clickFigure(${i})">
                                 <image src='${flowers[i].picture}' 
                                     alt="${flowers[i].name}">
                                 <figcaption>${flowers[i].name}</figcaption>
@@ -99,14 +99,15 @@
            }
        };
 
-       let clickFigure = (i, flowers) => {
+       let clickFigure = (i) => {
+           
            let temp = [];
            let count = 0;
            for(let j = i; j < flowers.length; j++) {
                temp[count++] = flowers[j];
            }
            for(j = 0; j < i; j++) {
-              temp[j] = flowers[j];
+              temp[count+ j] = flowers[j];
            }
            showFlower(temp);
        }
