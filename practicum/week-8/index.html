@@ -48,7 +48,9 @@
                 Using DBeaver, connect to your postgreSQL database on heroku and create the following tables with the
                 specified columns:
                 <ol>
-                    <li>customer: id, name, email, password</li>
+                    <li>customer: id, name, email, password 
+                        (note: never save the actual password into the database. 
+                        You should always encrypt the password and save the hashed password.)</li>
                     <li>question: id, picture, choices, answer</li>
                     <li>category: id, name</li>
                     <li>quiz: id, name, category_id</li>
