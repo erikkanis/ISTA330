@@ -5,6 +5,14 @@ window.onload = () => {
     let hostname = new URL(window.location.href).hostname;
     let username = hostname.split('.')[0];
     console.log(username);
+    let iframe = document.getElementById('myApplicationFrame');
+    let imagequiz_frontend = `https://${username}.github.io/imagequiz/`;
+    iframe.setAttribute('src', imagequiz_frontend);
+    let p = document.getElementById("goToWebsite");
+    p.innerHTML += `<h2>****************************************************************************************</h2>`;
+    p.innerHTML += `The imagequiz front-end is available at <a href="${imagequiz_frontend}">${imagequiz_frontend}</a>`;
+    
+    
     let names = ['Fred', 'John', 'Philip', 'Pablo', 'Toby', 'Rio'];
     let random = Math.floor(Math.random() * names.length);
     let api = `https://${username}-imagequiz-backend.herokuapp.com`;
@@ -61,7 +69,7 @@ window.onload = () => {
         .then(() => fetch(`${api}/quizzes`))
         .then(x => x.json())
         .then(x => {
-            quizId = x[Math.floor(Math.random() * x.length)].id;
+            quizId = x[Math.floor(Math.random() * x.length)].name;
             return x;
         })
         .catch(e => testDiv.innerHTML += `<h2>Error in /quizzes get method: ${e}</h2>`)
@@ -73,7 +81,7 @@ window.onload = () => {
             },
             body: JSON.stringify({
                 quizTaker: testTakerEmail,
-                quizId: quizId,
+                quizName: quizId,
                 score: 5
             })
         }))
@@ -94,7 +102,6 @@ window.onload = () => {
         .then(x => testDiv.innerHTML += `<h2>The test taker ${testTakerEmail} has ${x.length} submitted scores for quiz ${quizId}.</h2>`)
         .catch(e => testDiv.innerHTML += `<h2>Error in /scores get method: ${e}</h2>`)
         .then();
-    let iframe = document.getElementById('myApplicationFrame');
-    iframe.setAttribute('src', api);
+    
 }
 
